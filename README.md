@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# 🛍️ Product Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A beautiful and responsive product management system built with **React**, **TypeScript**, **Redux Toolkit**, **RTK Query**, and **Ant Design**.
 
-## Available Scripts
+This application allows users to **list**, **view details**, **edit**, and **update** products fetched from a public API, with a clean, user-friendly interface.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 🛒 Fetch and display products in a stylish Ant Design table.
+- 📃 View detailed information about a single product.
+- 📝 Edit product details with dynamic review fields.
+- 🔄 Update product information using PATCH API request.
+- 📚 Category select dropdown fetched from API.
+- 🔥 Fully responsive and beautiful UI with Ant Design components.
+- 🚀 Built with Redux Toolkit & RTK Query for efficient state and data management.
+- 🧹 Clean code structure with proper folder splitting.
+- ✅ TypeScript types (no `any`) used throughout for better safety and readability.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React** (with Hooks)
+- **TypeScript**
+- **Redux Toolkit** (RTK) + **RTK Query**
+- **Ant Design** (UI library)
+- **React Router Dom** (for page navigation)
+- **Axios** (optional for advanced custom queries)
+- **CSS Modules / Custom Styling**
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Setup Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Clone the Repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/your-username/product-management-app.git
+cd product-management-app
+ npm install
+ npm start
+```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+src/
+├── app/               # Redux store setup
+├── components/        # Reusable UI components (Table, Form, etc.)
+├── features/          # RTK Query API slices
+├── pages/             # Main pages (ProductList, ProductDetail, EditProduct)
+├── types/             # TypeScript interfaces and types
+├── styles/            # Custom global and module CSS
+└── utils/             # Helper utilities if needed
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ 
+ |  | 
+GET |  | 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Method     | Endpoint | Purpose    |
+|----------|:---:|-----------:|
+| GET   | /products?limit=xx&skip=yy  | Fetch paginated products |
+| GET    | /products/:id  | Fetch single product details        |
+| PATCH      | /products/:id  | Update product         |
+| GET      | /products/categories | Fetch all product categories        |
