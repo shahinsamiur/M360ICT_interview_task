@@ -37,8 +37,8 @@ This application allows users to **list**, **view details**, **edit**, and **upd
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/product-management-app.git
-cd product-management-app
+git clone https://github.com/shahinsamiur/M360ICT_interview_task
+cd M360ICT_interview_task
  npm install
  npm start
 ```
