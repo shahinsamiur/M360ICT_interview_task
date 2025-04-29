@@ -35,7 +35,7 @@ table{
 
 table tbody{
   box-shadow: 0 1px 3px rgba(0, 5, 0, 0.2);
-
+  color:#606060;
 
 }
 
@@ -48,7 +48,7 @@ table tbody tr td {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1C3145;
+  background: #404040;
   color:white;
   width:1.5vw;
   height: 1.5vw;
@@ -100,9 +100,47 @@ table thead{
 }
 
 
-/* @media  {
+@media (max-width: 576px) {
+  /* Styles for screens 768px and smaller (like tablets and phones) */
+
+  table thead{
+    /* box-shadow: 0 1px 3px rgba(0, 5, 0, 0.2); */
+    text-align: center;
+    font-size:1vw !important;
+    color:red;
   
-} */
+  }
+  table tbody{
+    font-size:3vw !important;
+    font-weight: bold;
+    padding:0.75vw;
+  
+  }
+
+  .index_cel{
+
+    width:5.5vw;
+    height: 5.5vw;
+
+  }
+
+  .ant-table-thead > tr > th {
+    font-size: 3vw;
+  }
+
+  .table_button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+
+  }
+  
+
+
+
+
+}
 
 
 
