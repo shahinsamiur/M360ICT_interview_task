@@ -1,5 +1,5 @@
 
-import '../App.css';
+
 import { Table } from "antd";
 import { RootState } from '../store';
 import { useSelector, useDispatch } from 'react-redux';
@@ -7,12 +7,13 @@ import { saveProducts } from "../reduxSlices/check";
 import { useGetUsersQuery } from '../RTXQuery/api';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-function  App() {
-    const navigate = useNavigate();
+import '../App.css';
+function App() {
+  const navigate = useNavigate();
 
   interface Product {
     id: number;
+    thumbnail: string;
     title: string;
     category: string;
     price: number;
@@ -22,7 +23,7 @@ function  App() {
     shippingInformation: string;
     // Add any other properties you need here
   }
-  
+
 
   const columns = [
 
@@ -30,7 +31,33 @@ function  App() {
       title: 'Index',
       dataIndex: 'id',
       key: 'ID',
-    },{
+      render: (index: number) => {
+        return (
+          <div className="index_cel">
+            {index}
+          </div>
+        );
+      },
+    },
+
+    {
+      title: 'Image',
+      dataIndex: 'thumbnail',
+      key: 'avatar',
+      render: (thumbnail: string) => {
+        return (
+          <img
+            src={thumbnail}
+            alt="avatar"
+            style={{ width: 50, height: 40, borderRadius: '50%' }}
+          />
+        );
+      },
+    },
+
+
+
+    {
       title: 'Product Name',
       dataIndex: 'title',
       key: 'title',
@@ -54,7 +81,17 @@ function  App() {
       title: 'Rating',
       dataIndex: 'rating',
       key: 'rating',
-    },
+      render: (rating: number) => (
+        <div className="rating">
+          <span className={rating > 4 ? 'rating-green' : 'rating-default'}></span>
+          <span className={rating > 4 ? 'rating-green' : 'rating-default'}>
+            {rating}
+          </span>
+        </div>
+
+      )
+    }
+    ,
     {
       title: 'Availability Status',
       dataIndex: 'availabilityStatus',
@@ -68,38 +105,38 @@ function  App() {
     {
       title: 'Action',
       key: 'action',
-      render: ( record:Product) => (
-        <button onClick={() => 
-            navigateToProductDetail(record)
+      render: (record: Product) => (
+        <button onClick={() =>
+          navigateToProductDetail(record)
 
-        }>
+        } className="table_button">
           View Details
         </button>
       ),
     },
   ];
-  
 
-//   Function to handle the navigation to Product Detail View
-  const navigateToProductDetail = (productId:Product) => {
+
+  //   Function to handle the navigation to Product Detail View
+  const navigateToProductDetail = (productId: Product) => {
     navigate(`/products/${productId.id}`)
   };
-  
+
 
   let dispatch = useDispatch()
 
-  const product_data=useSelector((state:RootState)=>state.productsData.productsData)
+  const product_data = useSelector((state: RootState) => state.productsData.productsData)
 
 
 
-  const { data, isLoading, error } =  useGetUsersQuery();
+  const { data, isLoading, error } = useGetUsersQuery();
 
-   // const [productData, setProductData] = useState<object[]>([]);
-   const dataSource = product_data.products.map(item => ({
+  // const [productData, setProductData] = useState<object[]>([]);
+  const dataSource = product_data.products.map(item => ({
     ...(item as Product),
     key: (item as Product).id,
   }));
-  
+
 
   useEffect(() => {
     if (isLoading) {
@@ -111,15 +148,14 @@ function  App() {
     }
 
     if (data) {
-  
+
       dispatch(saveProducts(data)); // Dispatch action to save data to Redux store
       // console.log("this is how",data.products)
     }
-    
-  
-  
-  }, [data, isLoading, error, dispatch]); // Run the effect when data, loading state, or error changes
 
+
+
+  }, [data, isLoading, error, dispatch]); // Run the effect when data, loading state, or error changes
 
 
 
@@ -127,11 +163,11 @@ function  App() {
     <>
 
 
-    
 
-    {
-    product_data?  <Table dataSource={dataSource} columns={columns} />:null
-    }
+
+      {
+        product_data ? <Table dataSource={dataSource} columns={columns} className="no-right-border" /> : null
+      }
     </>
   );
 }

@@ -1,38 +1,111 @@
-.App {
+
+*{
+  padding:0vw;
+  /* overflow-x: hidden; */
+}
+
+/* App.css */
+.ant-table-thead > tr > th {
+  background-color: #36304A !important;
+  color: #ffffff !important;
+  font-size: 16px;
   text-align: center;
+  border-right: none !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.no-right-border .ant-table-thead > tr > th {
+  border-right: none !important;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* App.css */
+.ant-table-thead > tr > th::before {
+  display: none !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+table{
+  /* background: blue !important; */
+  font-size:1vw !important;
+  font-weight: bold;
+  padding:0.75vw;
+
+}
+
+
+table tbody{
+  box-shadow: 0 1px 3px rgba(0, 5, 0, 0.2);
+
+
+}
+
+/* 
+table tbody tr td {
+
+} */
+
+.index_cel{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background: #1C3145;
+  color:white;
+  width:1.5vw;
+  height: 1.5vw;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+table thead{
+  /* box-shadow: 0 1px 3px rgba(0, 5, 0, 0.2); */
+  text-align: center;
+
+}
+
+
+.rating-green{
+  /* background-color: green; */
+  color:green
+}
+
+
+.table_button {
+  background-color: #1890ff;       /* AntD-like blue */
   color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.table_button:hover {
+  background-color: #1677cc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.table_button:active {
+  background-color: #0e5ea8;
 }
+
+.table_button:disabled {
+  background-color: #d9d9d9;
+  color: #aaa;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+/* @media  {
+  
+} */
+
+
+
+
+
+
