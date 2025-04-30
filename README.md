@@ -46,20 +46,30 @@ cd M360ICT_interview_task
 
 
 
+### 📁 Project Folder Structure
 
-src/
-├── app/               # Redux store setup
-├── components/        # Reusable UI components (Table, Form, etc.)
-├── features/          # RTK Query API slices
-├── pages/             # Main pages (ProductList, ProductDetail, EditProduct)
-├── types/             # TypeScript interfaces and types
-├── styles/            # Custom global and module CSS
-└── utils/             # Helper utilities if needed
+```bash
+my-app/
+├── public/                 # Static files
+│   ├── index.html          # Main HTML file
+│   └── favicon.ico         # App icon
+│
+├── src/                    # Source files
+│   ├── API/             # Images, fonts, etc.
+│   ├── components/      # Reusable UI components
+│   ├── css/             # Route-level components
+│   ├── pages/           # API calls
+│   ├── reduxSlices/ 
+│   ├── App.tsx   # Custom React hooks
+├── .gitignore              # Git ignore rules
+├── package.json            # Project metadata and scripts
+├── README.md               # Project documentation
+└── tailwind.config.js      # Tailwind CSS config (if used)
+```
+           
 
 
- 
- |  | 
-GET |  | 
+
 
 | Method     | Endpoint | Purpose    |
 |----------|:---:|-----------:|
