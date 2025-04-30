@@ -10,24 +10,25 @@ export const api = createApi({
 
 
     getUsers: builder.query<any[], void>({ // What we want to GET
-      query: () => 'products', // The endpoint (https://jsonplaceholder.typicode.com/users)
+      query: () => 'products', 
     }),
 
-
+    getCategories: builder.query<any[], void>({ // What we want to GET
+      query: () => 'products/categories', 
+    }),
 
     getProductById: builder.query<any, string>({
       query: (id) => `products/${id}`,
     }),
 
     // 4. PATCH create new product (mutation)
-    // createProduct: builder.mutation<any, any>({
-    //   query: (newProduct,id) => ({
-    //     url: `products/${id}`,
-    //     method: 'PATCH',
-    //     body: newProduct,
-    //   }),
-    // }),
-
+    updateProduct: builder.mutation({
+      query: ({ id, data }) => ({
+        url: `products/${id}`,
+        method: 'PATCH',
+        body: data,
+      }),
+    }),
 
 
 
@@ -35,4 +36,4 @@ export const api = createApi({
 });
 
 // Export the hook to use
-export const { useGetUsersQuery, useGetProductByIdQuery } = api;
+export const { useGetUsersQuery, useGetProductByIdQuery ,useGetCategoriesQuery,useUpdateProductMutation } = api;

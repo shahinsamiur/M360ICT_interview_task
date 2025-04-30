@@ -3,11 +3,11 @@
 import { Table } from "antd";
 import { RootState } from '../store';
 import { useSelector, useDispatch } from 'react-redux';
-import { saveProducts } from "../reduxSlices/check";
-import { useGetUsersQuery } from '../RTXQuery/api';
+import { saveProducts } from "../reduxSlices/allProductData";
+import { useGetUsersQuery } from '../API/api';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../App.css';
+import '../css/productPage.css';
 function App() {
   const navigate = useNavigate();
 
@@ -137,7 +137,7 @@ function App() {
       dataIndex: 'availabilityStatus',
       key: 'availabilityStatus',
       render: (availabilityStatus: string) => {
-        console.log(availabilityStatus.toLowerCase().trim())
+
         return (
           <div className={
             availabilityStatus.toLowerCase().trim() === "in stock"
@@ -197,7 +197,6 @@ function App() {
 
   useEffect(() => {
     if (isLoading) {
-      console.log("loading"); // Log "loading" when data is being fetched
     }
 
     if (error) {
@@ -207,7 +206,6 @@ function App() {
     if (data) {
 
       dispatch(saveProducts(data)); // Dispatch action to save data to Redux store
-      // console.log("this is how",data.products)
     }
 
 

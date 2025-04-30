@@ -10,13 +10,13 @@
 
 
 .product-container {
-    max-width: 1000px;
+    max-width: 90vw;
     margin: auto;
     padding: 24px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+ 
   }
   
   .product-main {
@@ -34,6 +34,7 @@
   }
   
   .product-info {
+  
     flex: 2;
   }
   
@@ -41,23 +42,30 @@
     font-style: italic;
     color: #777;
     margin-bottom: 10px;
+    margin-top:1vh;
   }
   
   .description {
     margin: 12px 0;
     line-height: 1.5;
+    margin-top:1vh;
+
   }
   
   .price {
     font-size: 1.4rem;
     font-weight: bold;
     color: #222;
+    margin-top:1vh;
+
   }
   
   .discount {
     color: #e25822;
     font-weight: normal;
     margin-left: 8px;
+    margin-top:1vh;
+
   }
   
 
@@ -100,6 +108,8 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-top:1vh;
+
     font-size: 1rem;
     flex-wrap: wrap;
   }
@@ -133,6 +143,8 @@
   
   .rating {
     /* color: #ffa500; */
+    margin-top:1vh;
+
     font-size: 1.1rem;
   }
 
@@ -184,11 +196,14 @@
   }
   
   .reviews-section .review {
-    background: #f9f9f9;
-    padding: 12px;
+    background: #ffffff;
+    padding: 0.5vw;
+    padding-left:2vw;
+    padding-top:1vw;
     margin-top: 10px;
     width:60%;
     /* border-left: 4px solid #ffa500; */
+    border-radius:10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.048);
   }
   

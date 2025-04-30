@@ -1,9 +1,9 @@
 
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './reduxSlices/check'; 
+import counterReducer from './reduxSlices/allProductData'; 
 import singleProduct from './reduxSlices/singleProduct'; 
 
-import {api} from './RTXQuery/api'
+import {api} from './API/api'
 export const store = configureStore({
   reducer: {
     productsData: counterReducer,
