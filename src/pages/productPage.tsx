@@ -66,36 +66,93 @@ function App() {
       title: 'Category',
       dataIndex: 'category',
       key: 'category',
+      render: (category: string) => {
+
+        return (
+          // <div className="rating">
+
+          <span className="box_gray category">
+            {category}
+          </span>
+          // </div>
+
+        )
+      }
     },
     {
       title: 'Price',
       dataIndex: 'price',
       key: 'price',
-    },
-    {
-      title: 'Stock',
-      dataIndex: 'stock',
-      key: 'stock',
+      render: (price: number) => {
+
+        return (
+          <div className="rating">
+
+            <span className="box_gray">
+              {price}
+            </span>
+          </div>
+
+        )
+      }
     },
     {
       title: 'Rating',
       dataIndex: 'rating',
       key: 'rating',
-      render: (rating: number) => (
-        <div className="rating">
-          <span className={rating > 4 ? 'rating-green' : 'rating-default'}></span>
-          <span className={rating > 4 ? 'rating-green' : 'rating-default'}>
-            {rating}
-          </span>
-        </div>
+      render: (rating: number) => {
 
-      )
-    }
-    ,
+        return (
+          <div className="rating">
+
+            <span className={` ${rating > 4 ? 'box_green' : rating > 3 ? 'box_yellow' : 'box_red'} rating`}>
+              {rating}
+            </span>
+          </div>
+
+        )
+      }
+    },
+    {
+      title: 'Stock',
+      dataIndex: 'stock',
+      key: 'stock',
+      render: (stock: number) => {
+
+        return (
+          <div className="rating">
+
+            <span className="box_gray">
+              {stock}
+            </span>
+          </div>
+
+        )
+      }
+
+    },
+
     {
       title: 'Availability Status',
       dataIndex: 'availabilityStatus',
       key: 'availabilityStatus',
+      render: (availabilityStatus: string) => {
+        console.log(availabilityStatus.toLowerCase().trim())
+        return (
+          <div className={
+            availabilityStatus.toLowerCase().trim() === "in stock"
+              ? "box_green"
+              : availabilityStatus.toLowerCase().trim() === "low stock"
+                ? "box_red"
+                : "box_yellow"
+          }>
+
+            <span className="text">{availabilityStatus}</span>
+
+          </div>
+
+        )
+      }
     },
     {
       title: 'Shipping Info',
@@ -163,11 +220,14 @@ function App() {
     <>
 
 
+      <div className="wraper">
+        {
+          product_data ? <Table dataSource={dataSource} columns={columns} className="no-right-border" /> : null
+        }
+
+      </div>
 
 
-      {
-        product_data ? <Table dataSource={dataSource} columns={columns} className="no-right-border" /> : null
-      }
     </>
   );
 }

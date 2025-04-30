@@ -20,13 +20,13 @@ export const api = createApi({
     }),
 
     // 4. PATCH create new product (mutation)
-    createProduct: builder.mutation<any, any>({
-      query: (newProduct) => ({
-        url: 'products/add',
-        method: 'PATCH',
-        body: newProduct,
-      }),
-    }),
+    // createProduct: builder.mutation<any, any>({
+    //   query: (newProduct,id) => ({
+    //     url: `products/${id}`,
+    //     method: 'PATCH',
+    //     body: newProduct,
+    //   }),
+    // }),
 
 
 

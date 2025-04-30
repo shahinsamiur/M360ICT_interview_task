@@ -1,0 +1,24 @@
+.main-footer {
+    background-color: #111827;
+    color: #e5e7eb;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    font-size: 0.9rem;
+  }
+  
+  .footer-links {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  

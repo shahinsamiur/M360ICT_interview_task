@@ -1,0 +1,77 @@
+/* Container Styling */
+.product-edit-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Title */
+  .product-edit-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  /* Form Field Labels */
+  .ant-form-item-label > label {
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  /* Input Fields */
+  .ant-input,
+  .ant-input-number,
+  .ant-select-selector {
+    border-radius: 8px !important;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem !important;
+  }
+  
+  /* TextArea */
+  .ant-input-textarea {
+    border-radius: 8px !important;
+  }
+  
+  /* Review Section Divider */
+  .ant-divider-inner-text {
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  /* Buttons */
+  .ant-btn {
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+  }
+  
+  .ant-btn-primary {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+  }
+  
+  .ant-btn-primary:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+  }
+  
+  /* Dynamic Review Inputs */
+  .review-row {
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  @media (max-width: 768px) {
+    .review-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  
