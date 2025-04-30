@@ -50,21 +50,21 @@ cd M360ICT_interview_task
 
 ```bash
 my-app/
-├── public/                 # Static files
-│   ├── index.html          # Main HTML file
-│   └── favicon.ico         # App icon
+├── public/                
+│   ├── index.html          
+│   └── favicon.ico       
 │
-├── src/                    # Source files
-│   ├── API/             # Images, fonts, etc.
-│   ├── components/      # Reusable UI components
-│   ├── css/             # Route-level components
-│   ├── pages/           # API calls
+├── src/                  
+│   ├── API/             
+│   ├── components/      
+│   ├── css/            
+│   ├── pages/          
 │   ├── reduxSlices/ 
-│   ├── App.tsx   # Custom React hooks
-├── .gitignore              # Git ignore rules
-├── package.json            # Project metadata and scripts
-├── README.md               # Project documentation
-└── tailwind.config.js      # Tailwind CSS config (if used)
+│   ├── App.tsx   
+├── .gitignore            
+├── package.json          
+├── README.md           
+└── tailwind.config.js  
 ```
            
 
